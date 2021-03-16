@@ -16,7 +16,7 @@
 
 ### 查询教材中的内容
 
-#### 查询1
+#### 代码一
 
 ```set autotrace on
 
@@ -36,7 +36,7 @@ GROUP BY d.department_name;
 
 ![代码一建议](./代码一建议.png)
 
-#### 查询2
+#### 代码二
 
 ```set autotrace on
 
