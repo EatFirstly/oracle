@@ -16,7 +16,7 @@
 
 要求至少有1万个订单，每个订单至少有4个详单。至少有两个部门，每个部门至少有1个员工，其中只有一个人没有领导，一个领导至少有一个下属，并且它的下属是另一个人的领导（比如A领导B，B领导C）。
 
-![录入数据](/test4/录入数据.png)
+![录入数据](./录入数据.png)
 
 ### 序列的应用
 
@@ -89,92 +89,92 @@
 | 6    | PRODUCT_PRICE | NUMBER(8,2)       | NO       | 产品销售价格                                   |
 
 - 数据关系图如下
-![img](er_pic.png)
+![img](./er_pic.png)
 
 ### 实验步骤
 
 1、删除表和序列，删除表的同时会一起删除主外键、触发器、程序包
-![删除表和序列](删除表和序列.png)
+![删除表和序列](./删除表和序列.png)
 
 2、DDL for Table DEPARTMENTS
-![创建DEPARTMENTS](创建DEPARTMENTS.png)
+![创建DEPARTMENTS](./创建DEPARTMENTS.png)
 
 3、DDL for Table EMPLOYEES
-![创建EMPLOYEES](创建EMPLOYEES.png)
+![创建EMPLOYEES](./创建EMPLOYEES.png)
 
 4、DDL for Table ORDER_ID_TEMP
-![创建ORDER_ID_TEMP](创建ORDER_ID_TEMP.png)
+![创建ORDER_ID_TEMP](./创建ORDER_ID_TEMP.png)
 
 5、DDL for Table ORDERS
-![创建ORDERS](创建ORDERS.png)
+![创建ORDERS](./创建ORDERS.png)
 
 6、创建本地分区索引ORDERS_INDEX_DATE：
-![创建本地分区索引ORDERS_INDEX_DATE](创建本地分区索引ORDERS_INDEX_DATE.png)
+![创建本地分区索引ORDERS_INDEX_DATE](./创建本地分区索引ORDERS_INDEX_DATE.png)
 
 7、使整个订单的详单存放在一起
-![使整个订单的详单存放在一起](使整个订单的详单存放在一起.png)
+![使整个订单的详单存放在一起](./使整个订单的详单存放在一起.png)
 
 8、创建3个触发器,DDL for Trigger ORDERS_TRIG_ROW_LEVEL
-![创建3个触发器](创建3个触发器.png)
+![创建3个触发器](./创建3个触发器.png)
 
 9、批量插入订单数据之前，禁用触发器
-![禁用触发器](禁用触发器.png)
+![禁用触发器](./禁用触发器.png)
 
 10、DDL for Trigger ORDER_DETAILS_ROW_TRIG
-![ORDER_DETAILS_ROW_TRIG](ORDER_DETAILS_ROW_TRIG.png)
+![ORDER_DETAILS_ROW_TRIG](./ORDER_DETAILS_ROW_TRIG.png)
 
 11、DDL for Trigger ORDER_DETAILS_SNTNS_TRIG
-![ORDER_DETAILS_SNTNS_TRIG](ORDER_DETAILS_SNTNS_TRIG.png)
+![ORDER_DETAILS_SNTNS_TRIG](./ORDER_DETAILS_SNTNS_TRIG.png)
 
 12、DDL for Sequence
-![Sequence](Sequence.png)
+![Sequence](./Sequence.png)
 
 13、DDL for View VIEW_ORDER_DETAILS
-![VIEW_ORDER_DETAILS](VIEW_ORDER_DETAILS.png)
+![VIEW_ORDER_DETAILS](./VIEW_ORDER_DETAILS.png)
 
 14、插入DEPARTMENTS，EMPLOYEES数据
-![插入DEPARTMENTS](插入DEPARTMENTS.png)
+![插入DEPARTMENTS](./插入DEPARTMENTS.png)
 
 15、批量插入订单数据，注意ORDERS.TRADE_RECEIVABLE（订单应收款）的自动计算,注意插入数据的速度,2千万条记录，插入的时间是：18100秒（约5小时）
-![批量插入订单数据](批量插入订单数据.png)
+![批量插入订单数据](./批量插入订单数据.png)
 
 16、最后动态增加一个PARTITION_BEFORE_2018分区
-![增加一个PARTITION_BEFORE_2018分区订单数据](增加分区.png)
+![增加一个PARTITION_BEFORE_2018分区订单数据](./增加分区.png)
 
 17、一切就绪，开始测试。以下时间在0.02秒以内才正常：（id取值从1到20000000）
-![查询ORDERS](查询ORDERS.png)
-![查询ORDER_DETAILS](查询ORDER_DETAILS.png)
-![查询VIEW_ORDER_DETAILS](查询VIEW_ORDER_DETAILS.png)
+![查询ORDERS](./查询ORDERS.png)
+![查询ORDER_DETAILS](./查询ORDER_DETAILS.png)
+![查询VIEW_ORDER_DETAILS](./查询VIEW_ORDER_DETAILS.png)
 
 18、递归查询某个员工及其所有下属，子下属员工
-![递归查询某个员工及其所有下属](递归查询某个员工及其所有下属.png)
+![递归查询某个员工及其所有下属](./递归查询某个员工及其所有下属.png)
 
 19、特殊查询语句：查询分区表情况
-![查询分区表情况](查询分区表情况.png)
+![查询分区表情况](./查询分区表情况.png)
 
 查询分区索引情况
-![查询分区索引情况](查询分区索引情况.png)
+![查询分区索引情况](./查询分区索引情况.png)
 
 20、查询一个分区中的数据
-![查询ORDERS中的数据](查询ORDERS中的数据.png)
-![查询ORDER_DETAILS中的数据](查询ORDER_DETAILS中的数据.png)
+![查询ORDERS中的数据](./查询ORDERS中的数据.png)
+![查询ORDER_DETAILS中的数据](./查询ORDER_DETAILS中的数据.png)
 
 21、统计用户的所有表
-![统计用户的所有表](统计用户的所有表.png)
+![统计用户的所有表](./统计用户的所有表.png)
 
 22、统计完成后，查询表的统计信息
-![查询表的统计信息1](查询表的统计信息1.png)
-![查询表的统计信息2](查询表的统计信息2.png)
-![查询表的统计信息3](查询表的统计信息3.png)
-![查询表的统计信息4](查询表的统计信息4.png)
-![查询表的统计信息5](查询表的统计信息5.png)
-![查询表的统计信息6](查询表的统计信息6.png)
+![查询表的统计信息1](./查询表的统计信息1.png)
+![查询表的统计信息2](./查询表的统计信息2.png)
+![查询表的统计信息3](./查询表的统计信息3.png)
+![查询表的统计信息4](./查询表的统计信息4.png)
+![查询表的统计信息5](./查询表的统计信息5.png)
+![查询表的统计信息6](./查询表的统计信息6.png)
 
 23、查看数据文件的使用情况（以system用户登录查询）
-![查看数据文件的使用情况](查看数据文件的使用情况.png)
+![查看数据文件的使用情况](./查看数据文件的使用情况.png)
 
 24、查看表空间的使用情况
-![查看表空间的使用情况](查看表空间的使用情况.png)
+![查看表空间的使用情况](./查看表空间的使用情况.png)
 
 ## 总结
 
